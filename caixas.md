@@ -50,3 +50,78 @@ FAZENDO ISSO JÁ DEIXA REGISTRADO ESSA PROPRIEDADE PARA TODAS AS CAIXAS DO CÓDI
    box-sizing: border-box;
 }
 
+# Display-block-inline
+- as caixas podem ser em block ou inline, ou seja, se separa de outra caixa/componente de forma diferente:
+- BLOCK: Ocupa toda a linha, colocando o próximo elemento abaixo desse, width e height são respeitados
+#  exemplos: <p> <div> <section>, todos os headings <h1> <h2>...
+
+- INLINE: Os elementos ficam ao lado do outro e não empurram outros elementos para baixo, width e height não funcionam
+  somente valores horizontais como margin funcionam.
+#  exemplos: <a> <strong> <span> <em>
+
+Block: ____________________
+      |_____conteúdo_______|
+       ____________________
+      |_____conteúdo_______|
+
+Inline:  __    __
+        |  |  |  |              
+        |  |  |  |   
+        |  |  |  |   
+        |__|  |__|   
+
+- você pode escolher o estilo de caixa também pela propriedade: display: inline;
+                                                             ou display: block;
+
+# Margin
+Geralmente usamos uma forma abreviada (shorthand) para escrever o margin. Esse formato segue o sentido horário iniciando pelo top, seguindo para right, bottom e left.
+
+margin: 12px 16px 10px 4px; // TOP = 12px | RIGHT = 16px | BOTTOM = 10px | LEFT = 4px 
+margin: 12px 16px 0; // TOP = 12px | RIGHT = 16px | BOTTOM = 0px | LEFT = 16px 
+margin: 8px 16px; // TOP = 8px | RIGHT = 16px | BOTTOM = 8px | LEFT = 16px 
+margin: 8px; // TOP = 8px | RIGHT = 8px | BOTTOM = 8px | LEFT = 8px 
+
+Valores permitidos para o margin: <length> (px), <percentage> (%), auto (cálculo automatizado da margin)
+
+# margin collapsing: Quando o top se junta ao bottom.
+exemplo em block:
+
+div {
+   margin-bottom: 15px;             
+}                             
+div {
+   margin-top: 10px;
+}
+- nesse exemplo, a margem em block será de 15px apenas e não 25px(10+25), pois ele considera o maior,
+  porém, se fosse em inline, os valores de margem seriam somados:
+
+div {
+   display: inline;
+   margin-right: 15px;
+}
+div {
+   display: inline;
+   margin-left: 10px;
+}
+- A margem final seria 25px (15 + 10)
+
+
+# PADDING
+- Segue o mesmo esquema da margin (bottom, top, left, right), o padding é o preenchimento interno da caixa.
+- O padding pode ter valores (values) de comprimento (px, em, rem) ou de porcentagem (%).
+
+# BORDER-OUTLINE
+- São as bordas da caixa, todo o em volta dela.
+- Você pode atribuir -> border: <border-style> | <border-width> | <border-color>
+
+tipos de style para a borda: solid (mais comum) | dotted | dashed | double | groove | ridge | inset | outset
+
+CUIDADO! ao botar uma largura, você soma os px com o tamanho da caixa.
+Para continuar com o tamanho definido da caixa, use box-sizing: border-box;
+
+# E o outline?
+O outline é muito semelhante ao border, mas difere em 4 sentidos:
+Não modifica o tamanho da caixa, pois não é parte do Box Model
+Poderá ser diferente de retangular
+Não permite ajuste individuais
+Mais usado pelo user agent para acessibilidade

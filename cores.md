@@ -27,4 +27,53 @@ div {
 
 color: inheritr; // Herda a cor do elemento anterior 
 color: initial; // Volta a sua cor inicial 
-color: unset; // Pega a cor do contexto 
+color: unset; // Pega a cor do contexto
+
+# BACKGROUND COLOR
+
+# A propriedade background-color define a cor de fundo do elemento selecionado.
+    background-color: blue;
+
+# Para adicionar uma imagem como background podemos usar a propriedade background-image.
+    background-image: url(link);
+
+# Por padrão a imagem vai se repetir e podemos modificar essa opção usando a propriedade background-repeat.
+    background-repeat: repeat-x; // a imagem se repete apenas no eixo x
+    background-repeat: repeat-y; // a imagem se repete apenas no eixo y
+    background-repeat: no-repeat; // a imagem não se repete
+
+# background-position podemos mudar a posição da imagem do background.
+    background-position: right/left/center; // escolhe a posição da imagem
+
+# Para mudar o tamanho da imagem do background usamos a propriedade background-size.
+    background-size: cover (se estica)/contain/40%/50px
+
+# A propriedade background-origin é quem define o ponto de origem de uma imagem específica.
+    background-origin: border-box;     // Começa a partir da borda
+    background-origin: padding-box;    // Começa a partir do padding
+    background-origin: content-box;    // Começa depois da borda
+
+# O background-clip define se imagem/cor iniciam debaixo de sua área de borda, preenchimento ou conteúdo.
+    background-clip: border-box;
+    background-clip: padding-box;
+    background-clip: content-box;
+    background-clip: text;
+
+# A propriedade background-attachment determina se a posição da imagem vai ser fixa ou se vai rolar junto com o conteúdo.
+    background-attachment: scroll; // padrão
+    background-attachment: fixed;  // fica parado no mesmo background ao rolar a página
+    background-attachment: local;
+
+# Podemos usar o shorthand background para definir todos os valores do background:
+    escrever apenas "background: " e todas as propriedades acima, com exceção do size que precisa botar uma barra antes de botar o valor desejado.
+
+    main {
+        background: blue center url(link) / 50px content-box;
+    }
+
+# linear-gradient() é a função usada para criar gradient linear com o CSS.
+    main {
+        background: linear-gradient(45deg, red, yellow);
+        background: radial-gradient(rgba(255, 255, 255, 0), rgba(255, 0, 0, 0.2)) // faz de forma circular o gradiente
+    }
+- é possível adicionar multiplos backgrounds aplicando vírgula.

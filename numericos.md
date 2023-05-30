@@ -63,11 +63,12 @@ html {
 
 # POSIÇÕES:
 - Representa um conjunto de coordenadas 2D: top, right, bottom, left e center
-Usado para alguns tipos de propriedades como o background-position.
+- Usado para alguns tipos de propriedades como o background-position ou position. (verificar arquivo posicoes)
 
 .classeAleatoria {
     background-image : url(http://imagem.com)
     background-position: right 50px; (posição direita da imagem a 50px)
+    position = relative;
 }
 
 # Uso prático da função calc() para posicionar uma imagem:

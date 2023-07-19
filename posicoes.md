@@ -21,8 +21,6 @@
 
 # FLEX -> MODELO FLEXIBLE BOX LAYOUT
 
-- ao utilizar flex: 1/0/X px; irá mudar largura e altura das flex containers.
-
 - Primeiramente, as caixas podem ser em block ou inline, e a propriedade display: block/inline define como será posicionado, foi criado o atributo flex que permite que um elemento se comporte como um elemento de outra caixa pai. 
 
 - No modelo de layout do Flexbox, os filhos de um contêiner flex podem ser dispostos em qualquer direção, e podem "flexibilizar" seus tamanhos, crescendo para preencher o espaço vazio ou diminuindo para evitar o transbordamento do elemento pai. 
@@ -30,6 +28,11 @@
 |   ________  PAI  ________    |
 |  |_filho__|     |__filho_|   |
 |______________________________|
+
+.content {
+    display: flex; -> DEFINE OS ITENS DA CAIXA COMO INLINE, UM AO LADO DO OUTRO.
+}
+- ao utilizar flex: 1/0/X px; irá mudar largura e altura das flex containers.
 
 * Dica: se desejar flexionar seus itens, ajuste a altura de sua flexbox através da viewport, pois independente da
 aba do usuário, a altura também se flexionará, "através de height: Número vh"

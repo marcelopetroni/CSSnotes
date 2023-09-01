@@ -1,0 +1,48 @@
+/* ANIMATION */
+
+    /* TRANSITION VS ANIMATION:
+    -> São duas propriedades utilizadas para animar elementos na página no qual 'transtion' é utilizada mais
+    para animações mais suaves e dependentes de algum evento (ex: hover), já a propriedade 'animation' é mais
+    utlizada para animações mais complexas e independentes de algum evento. veja: */
+
+
+    /* TRANSITION /*
+    /* Quer aplicar alguma configuração ao passar o mouse em cima de algum elemento? utilize hover: */
+
+    .minhaClasse {
+        /* configurações */
+        transition: filter 0.2s;
+    }
+
+    .minhaClasse:hover {
+        filter: brightness(0.9); /* nesse exemplo é aplicado uma cor mais luminosa ao elemento */
+        cursor: pointer; /* muda a imagem do cursor para uma mão apontando para sinalizar ao usuário que é apertável
+        */
+    }
+
+    /* outro exemplo que aprendi: */
+
+    minhaClasse:hover {
+        transform: scale(1.1); /* aumenta o elemento, invés de deixá-lo estático, ex: selecionar um filme na netflix
+        */
+    }
+
+    /* ANIMATION */
+
+    h1 {
+        animation: nomeAnimacao 5s;
+    }
+
+    /* Utilize @keyframes e o nome da animação, vejo vantagem por pode o inicio e o fim da animaçao,
+    com os comandos from {} to{}, veja: */
+
+    @keyframes nomeAnimacao {
+        from {
+            transform: rotateX(90deg);
+        }
+        to {
+            transform: rotateX(0deg);
+        }
+        /* nesse exemplo há um efeito de "abrindo" o título como fosse de "nada" para o título todo. */
+    }
+    

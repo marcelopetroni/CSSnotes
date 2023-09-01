@@ -77,3 +77,11 @@ color: unset; // Pega a cor do contexto
         background: radial-gradient(rgba(255, 255, 255, 0), rgba(255, 0, 0, 0.2)) // faz de forma circular o gradiente
     }
 - é possível adicionar multiplos backgrounds aplicando vírgula.
+
+
+# box-shadow para aplicar um efeito de "sombra" a alguma caixa ou elemento:
+
+.container input {
+    box-shadow: 1px, 3px, 8px, rgba(0, 0, 0, 0.5); // define o tamanho da sombra e uma opacidade preta de 50%
+    border-radius: 8px; // arredondar borda
+}

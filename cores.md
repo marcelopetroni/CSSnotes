@@ -14,7 +14,7 @@ div {
 - hexadecimal -> color: #090 // RED, GREEN, BLUE (de 0-9)
 
 div {
-    color: rgb(34, 12, 64, 0.6) // 0-255, o último representa a transparência.
+    color: rgb(34, 12, 64, 0.6) // 0-255, o último representa a transparência/opacidade;
 }
 
 # HSL → Hue - Saturation - Lightness

@@ -1,0 +1,116 @@
+// SASS (Syntactically Awesome Style Sheets)
+    // É um pré-processador css que adiciona recursos/funcionalidades que não estão presentes no css
+    // Precisa ser compliado para transformar de volta para o css
+
+// VARIÁVEIS
+    // É possível criar variáveis para reutilizar valores pelo seu código css: 
+    $corPrimaria: blue;
+
+    exemplo {
+        background-color: $corPrimaria;
+    }
+    exemplo2 {
+        color: $corPrimaria;
+    }
+    // os dois blocos terão a cor da variável
+
+// AGRUPAMENTO
+    // É possível unir tags em um grupo estabelecendo uma hierarquia visível
+
+    // SASS:
+    header {
+        display: flex;
+        color: white;
+        h1 {
+            font-family:'Times New Roman', Times, serif;
+        }
+        button {
+            color: $corPrimaria;
+            &:hover {
+                cursor: pointer;
+                color: darkblue;
+            }
+            // o '&' (ê comercial) se referencia a última tag, ou seja, seria o mesmo que button:hover
+        }
+        p {
+            color: green;
+        }
+    }
+
+    // DEPOIS DE PROCESSADO NO CSS: 
+    header {
+        display: flex;
+        color: white;
+    }
+    header h1 {
+        font-family:'Times New Roman', Times, serif;
+    }
+    header button {
+        color: $corPrimaria;
+    }
+    button:hover {
+        cursor: pointer;
+        color: darkblue;
+    }
+    header p {
+        color: green;
+    }
+
+// IMPORTAÇÃO
+    // Permite dividir o código em arquivos e importá-los quando necessário. 
+    @import './algumOutroArquivoSass';
+    @import './header';
+    @import './body';
+
+        // pode conter várias propriedas dentro do arquivo que componham/modifique o projeto.
+
+// MIXIN
+    // Permite reutilizar conjuntos de propriedades em outras regras.
+    // @mixin NOME 
+    @mixin teste {
+        display: flex;
+        color: white;
+        justify-content: center;
+    }
+
+    header {
+        @include teste; // aqui vai trazer todas as propriedades de teste para header, une utilizando @include
+
+        flex-direction: column;
+        background-color: black;
+
+        @include teste2(blue); // note o parâmetro azul que passei para o mixin
+        
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    }
+
+    @mixin teste2($color) {
+        // um mixin pode ter parâmetros também.
+        color: $color;
+    }
+
+// HERANÇA (assim como visto em p3)
+    // assim como pode importar outros arquivos, permite que uma classe herde propriedades de outra:
+
+        // ARQUIVO 1:
+        navBarResponsiva {
+            display: flex;
+            color:white;
+        }
+        footer {
+            color: black;
+        }
+
+        // ARQUIVO 2: 
+        header {
+            @extend navBarResponsiva;
+            flex-direction: row;
+        }
+
+    // Se tiver dois arquivos com uma regra de mesmo nome (tipo no exemplo 'navBarResponsivo')
+    // as propriedades são mescladas no local em que foi extendida.
+
+// Uma extensão do vscode que transforma o pré-processador em um arquivo css é o live sass compiler
+// que cria um arquivo index.css com as regras convertidas.

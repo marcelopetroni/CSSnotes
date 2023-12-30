@@ -1,0 +1,13 @@
+/* RESPONSIVIDADE
+    Quando for trablhar com outras telas, é preciso deifinir diferentes configurações.
+    Use a seguinte regra para trabalhar com diferentes telas:  */
+
+@media screen and (max-width: 768px) {
+    /* números ilustrativos que você muda de acordo com as telas trabalhadas */
+    h1 {
+        text-size: 15px;
+        color: red;
+    }
+    /* o que acontece aqui? essas configurações são aplicadas a esse h1 em telas de até 768px de largura
+    se for utilizado min-width, acontece o contrário, as configurações são aplicadas para telas acima de 768px */
+}

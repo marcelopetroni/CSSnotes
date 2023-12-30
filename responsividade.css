@@ -13,10 +13,39 @@
 }
 
 /* é recomendado utilizar em seus containers: */
+body {
+    font-size: 16px;
+}
 .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 0.5rem;
+    padding-left: 0.5rem; /* multiplica 0.5 a fonte definida no root/body */
+    padding-right: 0.5rem; 
+}
+
+/* Usando Grid responsivo */
+
+.exemplo {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem; 
     padding-right: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* O auto-fit significa que o navegador tentará colocar o máximo de colunas possível na linha. */
+    /* já o minmax define o tamanho mínimo para cada coluna e np máximo 1 fração do espaço disponível,
+    é uma forma dele auto-adaptar ao espaço disponibilizado */
+}
+
+/* Algumas propriedades boas para mudar dependendo do espaçamento: */
+.exemplo2 {
+    font-size: 1.2rem; 
+    text-align: 0.5rem;
+    flex-direction: column;
+    order: -1; 
+    margin: auto;
+    /* exemplo: um projeto com um texto (1º div) e uma imagem ao lado (2º div), quando mudado a ordem e a direção
+    você pode botar a imagem acima do texto tornando ela a 1º div e a direção que era row para column */
 }

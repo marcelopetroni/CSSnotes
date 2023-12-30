@@ -11,3 +11,12 @@
     /* o que acontece aqui? essas configurações são aplicadas a esse h1 em telas de até 768px de largura
     se for utilizado min-width, acontece o contrário, as configurações são aplicadas para telas acima de 768px */
 }
+
+/* é recomendado utilizar em seus containers: */
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
